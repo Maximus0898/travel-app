@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+main {
+  height: 100vh;
+  background: url('../media/city.jpg');
+  background-position: 50%;
+  background-attachment: fixed;
+  background-size: cover;
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <title>Travel App</title>
+  </head>
+
+  <body>
+    <main>
+      <section class="wrapper">
+        <form class="form" onsubmit="return Client.handleSubmit(event)">
+          <p class="form__title">Travel Planner</p>
+          <input
+            id="js--dest"
+            type="text"
+            placeholder="Destination"
+            autofocus
+            required
+          />
+          <i class="fas fa-map-marker-alt"></i>
+          <input
+            id="js--date"
+            type="date"
+            placeholder="Departure Date"
+            required
+          />
+          <i class="fas fa-plane-departure"></i>
+          <button
+            class="form__button"
+            type="submit"
+            onsubmit="return Client.handleSubmit(event)"
+          >
+            <i class="spinner"></i>
+            <span class="state">Let's Go!!!</span>
+          </button>
+          <a href="#result" class="cta">MODAL</a>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__title">TravelAPP</p>
+      <div class="footer__social">
+        <a href="#" class="footer__icon"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="footer__icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="footer__icon"><i class="fab fa-twitter"></i></a>
+      </div>
+      <p>&copy; <span id="year"></span> Copyright. All Rights Reserved.</p>
+    </footer>
+
+    <div id="result" class="m-overlay">
+      <h2>Something went wrong</h2>
+      <!-- <div class="modal">
+        <a href="#close" class="close">&times;</a>
+        <h4>Your trip to Frankfurt is 225 days away</h4>
+        <div class="city-result">
+          <div class="city-image">
+            <img src="src/client/media/city.jpg" alt="city image" />
+          </div>
+          <div class="trip-info">
+            <p id="dates">
+              <i class="fas fa-calendar-day"></i> Departing: 2020-10-2
+            </p>
+            <p id="place">
+              <i class="fas fa-map-marked-alt"></i> Destination: Frankfurt
+            </p>
+            <p id="country"><i class="fas fa-globe"></i> Country: Germany</p>
+            <p><i class="fas fa-city"></i> Capital of The Country: Berlin</p>
+            <p>
+              <i class="fas fa-users"></i> Population of the Country: 1550000
+            </p>
+          </div>
+        </div>
+        <div class="weather">
+          <h4>Weather Forecast for today</h4>
+          <div>
+            <img
+              src="https://www.weatherbit.io/static/img/icons/t01n.png"
+              alt="weather icon"
+            />
+          </div>
+          <p>broken clouds</p>
+          <p class="temp">-16'C</p>
+
+          <ul>
+            <li><i class="fas fa-temperature-low"></i> Low: 15'C</li>
+            <li><i class="fas fa-temperature-high"></i> High: 8'C</li>
+            <li><i class="fas fa-wind"></i> Wind: 22 m/s</li>
+            <li><i class="fas fa-tint"></i> Humidity: 68%</li>
+            <li><i class="fas fa-leaf"></i> Air Quality Index: 25</li>
+          </ul>
+        </div>
+      </div> -->
+    </div>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker
+            .register('/service-worker.js')
+            .then((registered) => {
+              console.log('SW registered: ', registered);
+            })
+            .catch((regError) => {
+              console.log('SW registration failed: ', regError);
+            });
+        });
+      }
+
+      (function () {
+        document.getElementById('year').innerHTML = new Date().getFullYear();
+      })();
+    </script>
+  </body>
+</html>
