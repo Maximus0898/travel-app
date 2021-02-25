@@ -4,7 +4,7 @@ The project is a web app that obtains a travel destination and date from the use
 
 # Testing
 
-Testing is done with [Jest](https://jestjs.io/) testing framework. To run the tests, use the command:
+Testing is done with [Jest](https://jestjs.io/) testing framework. To run the tests, use the command:  
 `$ npm run test`
 
 # External APIs
@@ -13,3 +13,9 @@ Testing is done with [Jest](https://jestjs.io/) testing framework. To run the te
 - [Weatherbit API](https://www.weatherbit.io/api)
 - [Pixabay API](https://pixabay.com/api/docs/)
 - [REST Countries API](https://restcountries.eu/)
+
+# Project Dependencies
+
+- [Webpack](https://webpack.js.org/)
+- [Babel](https://babeljs.io/)
+- [Express](https://expressjs.com/)
