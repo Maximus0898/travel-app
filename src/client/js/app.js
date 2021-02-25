@@ -164,4 +164,4 @@ const updateUI = async () => {
   }
 };
 
-export { handleSubmit };
+export { handleSubmit, postData, updateUI };

@@ -38,7 +38,6 @@ let projectData = {};
 
 app.post('/addData', async (req, res) => {
   const data = await req.body.data;
-  console.log('From post req handler...', data);
   projectData = data;
   console.log('This is from projectData ----', projectData);
   res.end();
@@ -47,3 +46,5 @@ app.post('/addData', async (req, res) => {
 app.get('/travel', (req, res) => {
   res.send(projectData);
 });
+
+module.exports = app;
